@@ -20,11 +20,6 @@
 - **Smart Notifications**: Get instant browser notifications when a price drop is detected.
 - **Background Monitoring**: The extension quietly checks prices in the background periodically.
 
-### 🎨 Premium UI/UX
-- **Modern Design**: Clean, glassmorphism-inspired interface with rounded corners and smooth transitions.
-- **Dark Mode Support**: Automatically adapts to your system's color scheme.
-- **Non-Intrusive**: Uses toast notifications and custom modals for a seamless experience.
-
 ---
 
 ## 🛠️ Installation
@@ -72,15 +67,6 @@ dealRadar/
 
 ---
 
-## 🤝 Contributing
-
-1.  Fork the repository.
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
-
----
 
 ## 📝 License
 
