@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dealRadar</title>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-section">
+        <div class="logo-icon">DR</div>
+        <div class="logo-text">
+          <h1>dealRadar</h1>
+          <p>Smart Price Tracking</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button id="trackBtn" class="btn btn-primary" aria-label="Track current page">
+          <span class="icon-plus">+</span> Track
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-content">
+
+      <!-- Selection Detail View (Hidden by default or empty) -->
+      <section id="detailView" class="detail-view hidden">
+        <div class="detail-header">
+          <button id="backBtn" class="btn btn-icon btn-sm" aria-label="Back to list">
+            <span class="icon-arrow-left">←</span>
+          </button>
+          <h2 class="detail-title truncate">Product Details</h2>
+          <button id="removeBtn" class="btn btn-icon btn-danger btn-sm" aria-label="Remove item">
+            <span class="icon-trash">🗑</span>
+          </button>
+        </div>
+
+        <div class="card pulse-card">
+          <div class="card-row">
+            <span class="label">Deal Score</span>
+            <span class="score-badge" id="dealScore">--</span>
+          </div>
+          <p class="hint-text" id="dealHint">Analyzing price history...</p>
+          <div class="price-large" id="priceNow">--</div>
+          <div class="meta-row">
+            <span id="lastUpdated">Updated: --</span>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <div class="card-header">
+            <h3>Price History</h3>
+            <div class="chart-legend">
+              <span class="dot"></span> History
+            </div>
+          </div>
+          <div class="chart-container" style="position: relative;">
+            <canvas id="priceChart"></canvas>
+            <div id="chartTooltip" class="chart-tooltip hidden"></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-label">Min</span>
+              <span class="stat-value" id="statsMin">--</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Max</span>
+              <span class="stat-value" id="statsMax">--</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card alert-card">
+          <div class="card-header">
+            <h3>Price Alerts</h3>
+            <label class="switch">
+              <input type="checkbox" id="alertToggle">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="input-group">
+            <label for="targetPrice">Target Price</label>
+            <input type="number" id="targetPrice" placeholder="0.00" step="0.01">
+          </div>
+          <div class="input-group">
+            <label for="targetPercent">Drop %</label>
+            <input type="number" id="targetPercent" placeholder="10" min="1" max="99">
+          </div>
+          <button id="saveAlert" class="btn btn-secondary full-width">Save Alert</button>
+          <p class="status-message" id="alertStatus"></p>
+        </div>
+      </section>
+
+      <!-- List View -->
+      <section id="listView" class="list-view">
+        <div class="list-header">
+          <h2>Tracked Items</h2>
+          <div class="sort-control">
+            <select id="sortSelect" class="select-clean">
+              <option value="recent">Recent</option>
+              <option value="drop">Best Drops</option>
+              <option value="high">Price High</option>
+            </select>
+          </div>
+        </div>
+        <div id="itemsList" class="items-list">
+          <!-- Items will be injected here -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmModal" class="modal-overlay hidden">
+      <div class="modal">
+        <h3 class="modal-title">Remove Item?</h3>
+        <p class="modal-text">Are you sure you want to stop tracking this product?</p>
+        <div class="modal-actions">
+          <button id="cancelRemove" class="btn btn-secondary">Cancel</button>
+          <button id="confirmRemove" class="btn btn-danger">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- Footer / Status Bar -->
+    <footer class="app-footer">
+      <div class="sync-status">
+        <span class="status-dot"></span>
+        <span id="lastSync">Synced just now</span>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
