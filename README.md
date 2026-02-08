@@ -1,5 +1,8 @@
 # 🎯 dealRadar: Smart Price Tracking Extension
 
+
+[![Install on Firefox](https://img.shields.io/badge/Firefox-Install%20Addon-FF7139?style=for-the-badge&logo=firefox-browser)](https://addons.mozilla.org/addon/dealradar/)
+
 **dealRadar** is a powerful, local-first Chrome extension designed to help you track product prices across any e-commerce website. With a modern, Apple-inspired interface, it provides instant price history visualization, smart deal scoring, and customizable price drop alerts—all without needing a user account or external backend.
 
 ---
@@ -23,6 +26,11 @@
 ---
 
 ## 🛠️ Installation
+
+### 🦊 Firefox
+[**Click here to install from Add-ons for Firefox**](https://addons.mozilla.org/addon/dealradar/)
+
+### ⚪ Chrome (Manual Install)
 
 1.  **Clone or Download** this repository.
 2.  Open Chrome and navigate to `chrome://extensions/`.
