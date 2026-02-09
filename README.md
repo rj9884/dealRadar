@@ -23,6 +23,16 @@
 - **Smart Notifications**: Get instant browser notifications when a price drop is detected.
 - **Background Monitoring**: The extension quietly checks prices in the background periodically.
 
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="assets/screenshots/popup.png" alt="Popup UI" width="300" />
+  <img src="assets/screenshots/chart.png" alt="Price History Chart" width="300" />
+</div>
+
 ---
 
 ## 🛠️ Installation
