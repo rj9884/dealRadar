@@ -1,87 +1,146 @@
-# 🎯 dealRadar: Smart Price Tracking Extension
+<div align="center">
+  <img src="src/assets/icons/icon128.svg" alt="dealRadar Logo" width="80" height="80" />
+  <h1>🎯 dealRadar</h1>
+  <p>
+    <strong>Smart Price Tracking Extension</strong>
+    <br />
+    Track product prices, view history, and get drop alerts—all locally.
+    <br />
+    <br />
+    <a href="https://addons.mozilla.org/addon/dealradar/">Install for Firefox</a>
+    ·
+    <a href="#installation">Install for Chrome</a>
+  </p>
+  
+  [![Install on Firefox](https://img.shields.io/badge/Firefox-Install%20Addon-FF7139?style=for-the-badge&logo=firefox-browser)](https://addons.mozilla.org/addon/dealradar/)
+</div>
 
+## Table of Contents
 
-[![Install on Firefox](https://img.shields.io/badge/Firefox-Install%20Addon-FF7139?style=for-the-badge&logo=firefox-browser)](https://addons.mozilla.org/addon/dealradar/)
-
-**dealRadar** is a powerful, local-first Chrome extension designed to help you track product prices across any e-commerce website. With a modern, Apple-inspired interface, it provides instant price history visualization, smart deal scoring, and customizable price drop alerts—all without needing a user account or external backend.
+- [About The Project](#about-the-project)
+- [Key Features](#key-features)
+- [Built With](#built-with)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
 
 ---
 
-## ✨ Key Features
+<a id="about-the-project"></a>
+## 📖 About The Project
 
-### 🚀 Smart Tracking
-- **Universal Compatibility**: Works on almost any product page (Amazon, Flipkart, etc.) using intelligent heuristics to detect price, currency, and product details.
-- **One-Click Add**: Simply click "Track" on any product page to start monitoring.
+**dealRadar** is a powerful, privacy-focused Chrome and Firefox extension designed to help you track product prices across any e-commerce website. 
 
-### 📊 Visual Price History
-- **Interactive Charts**: Hover over the beautiful gradient chart to see exact price points and dates.
-- **Instant Stats**: Automatically calculates Min, Max, and Current prices.
-- **Deal Score**: Analyzes the current price against the average to tell you if it's a "Great", "Good", or "High" price.
+Unlike other price trackers that rely on external servers or require user accounts, **dealRadar** works entirely **locally** on your device. It uses intelligent heuristics to detect price, currency, and product details, making it universally compatible with sites like Amazon, Flipkart, and more.
 
-### 🔔 robust Alerts
-- **Custom Targets**: Set a specific target price or a percentage drop (e.g., "Notify me if it drops by 10%").
-- **Smart Notifications**: Get instant browser notifications when a price drop is detected.
-- **Background Monitoring**: The extension quietly checks prices in the background periodically.
-
-
----
-
-## 📸 Screenshots
+With a modern, Apple-inspired interface, it provides:
+*   **Instant Price History**: Visualize price trends with interactive charts.
+*   **Smart Deal Scoring**: Know if a price is "Great", "Good", or "High" instantly.
+*   **Custom Alerts**: Set target prices or percentage drops.
 
 <div align="center">
   <img src="assets/screenshots/popup.png" alt="Popup UI" width="300" />
   <img src="assets/screenshots/chart.png" alt="Price History Chart" width="300" />
 </div>
 
+<a id="built-with"></a>
+### 🏗 Built With
+
+*   ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+*   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+*   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+*   **Chrome Storage API**: For local data persistence.
+*   **Chrome Alarms API**: For periodic background checks.
+
 ---
 
-## 🛠️ Installation
+<a id="key-features"></a>
+## ✨ Key Features
+
+### 🚀 Smart Tracking
+*   **Universal Compatibility**: Works on almost any product page (Amazon, Flipkart, Myntra, etc.) using intelligent DOM analysis.
+*   **One-Click Add**: Simply click "Track" on the popup to start monitoring a product instantly.
+
+### 📊 Visual Price History
+*   **Interactive Charts**: Hover over beautiful gradient charts to see exact price points and dates.
+*   **Instant Stats**: View Min, Max, and Current prices at a glance.
+*   **Deal Score**: Algorithms analyze the current price against the average to rate the deal quality (Good, Great, Bad).
+
+### 🔔 Robust Alerts
+*   **Custom Targets**: Set specific price goals or percentage drop thresholds (e.g., "Notify me at -10%").
+*   **Smart Notifications**: Get native browser notifications when prices drop.
+*   **Background Monitoring**: Quietly checks prices in the background periodically without affecting browser performance.
+
+---
+
+<a id="installation"></a>
+## 🛠 Installation
 
 ### 🦊 Firefox
-[**Click here to install from Add-ons for Firefox**](https://addons.mozilla.org/addon/dealradar/)
+1.  Visit the [dealRadar Add-on page](https://addons.mozilla.org/addon/dealradar/).
+2.  Click **"Add to Firefox"**.
 
 ### ⚪ Chrome (Manual Install)
+Since this extension is not yet on the Chrome Web Store, you can install it manually:
 
 1.  **Clone or Download** this repository.
 2.  Open Chrome and navigate to `chrome://extensions/`.
-3.  Enable **Developer mode** (toggle in the top right).
+3.  Enable **Developer mode** (toggle in the top right corner).
 4.  Click **Load unpacked**.
-5.  Select the **`dealRadar`** folder (the root directory containing `manifest.json`).
+5.  Select the **`dealRadar`** folder (ensure it contains the `manifest.json` file).
 
 ---
 
+<a id="usage"></a>
+## 🚀 Usage
+
+1.  **Navigate to a Product Page**: Go to any product page on an e-commerce site.
+2.  **Open dealRadar**: Click the dealRadar icon in your browser toolbar.
+3.  **Click "Track Price"**: The extension will scrape the current price and add it to your watchlist.
+4.  **View Dashboard**: Click the icon again to see your tracked items, price history charts, and stats.
+5.  **Set Alerts**: Click the verify/edit icon next to an item to set a target price.
+
+---
+
+<a id="project-structure"></a>
 ## 📂 Project Structure
 
-The project is organized for modularity and maintainability:
+This project is organized for modularity and maintainability:
 
 ```text
 dealRadar/
-├── manifest.json        # Extension configuration
-├── README.md            # Documentation
+├── manifest.json        # Extension configuration (Manifest V3)
+├── README.md            # Project Documentation
+├── assets/              # Static assets (screenshots)
 └── src/
     ├── background/      # Service worker for background tasks
     │   └── service-worker.js
-    ├── content/         # Content scripts for price extraction
+    ├── content/         # Content scripts for scrapping & price extraction
     │   └── content.js
     ├── popup/           # Popup UI and Logic
-    │   ├── popup.html
+    │   ├── popup.html   # Main popup structure
     │   ├── popup.css    # Modern CSS variables & styles
-    │   ├── popup.js     # Main entry point
-    │   ├── ui.js        # UI rendering & interaction logic
-    │   ├── chart.js     # Canvas chart rendering
-    │   └── storage.js   # Local storage management
+    │   ├── popup.js     # Main entry point & event listeners
+    │   ├── ui.js        # UI rendering & DOM manipulation
+    │   ├── chart.js     # Canvas chart rendering logic
+    │   └── storage.js   # Local storage management wrapper
     └── utils/           # Shared utilities
-        └── format.js
+        └── format.js    # Currency formatting & helpers
 ```
 
 ---
 
-## 💻 Tech Stack
+<a id="contributing"></a>
+## 🤝 Contributing
 
--   **Core**: HTML5, CSS3 (Variables, Flexbox/Grid), Vanilla JavaScript (ES Modules).
--   **Storage**: `chrome.storage.local` for persisting tracked items.
--   **Background Tasks**: `chrome.alarms` for scheduling price checks.
--   **Visuals**: HTML5 Canvas for charts.
+Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
 ---
 
